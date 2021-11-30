@@ -15,7 +15,7 @@ loguser=$(who | wc -l)
 mac=$(ip link | grep "link/ether" | awk '$1 == "link/ether" {print $2}')
 network=$(printf "%s" "IP $(hostname -I)($mac)")
 nbsudo=$(echo "$(journalctl _COMM=sudo -q| grep -c COMMAND) cmd")
-b="Gb"
+b="Mb"
 wall "
 #Architecture: $Architecture
 #CPU physical : $physicalCPU
